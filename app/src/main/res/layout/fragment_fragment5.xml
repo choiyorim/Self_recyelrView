@@ -1,0 +1,28 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.choiyorim.self_recyelrview.Fragments.Fragment5">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/text"
+            android:text="fragment2" />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn"
+            android:background="@drawable/oval"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/add"
+            android:layout_marginEnd="41dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="47dp" />
+    </RelativeLayout>
+</FrameLayout>

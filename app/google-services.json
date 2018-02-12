@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "347930844219",
+    "firebase_url": "https://selfrecyelrview.firebaseio.com",
+    "project_id": "selfrecyelrview",
+    "storage_bucket": "selfrecyelrview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347930844219:android:26037982877200f5",
+        "android_client_info": {
+          "package_name": "com.example.choiyorim.self_recyelrview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347930844219-s3gsqur4kabf2tua744kstliql3acmi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.choiyorim.self_recyelrview",
+            "certificate_hash": "be86ca1ae6094bec45c79b1a7fd7a8caed26016f"
+          }
+        },
+        {
+          "client_id": "347930844219-oobnsj14ii5jlpgusn8ki9bgmsdcs0l2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB37Oh9VtQmx_kbd_4vfZzD6drWsPcSBj8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347930844219-oobnsj14ii5jlpgusn8ki9bgmsdcs0l2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
