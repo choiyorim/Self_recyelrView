@@ -48,6 +48,7 @@ public class WriteFragment extends Fragment {
     private ImageView image;
     private FirebaseStorage mStorageRef;
     private Uri filePath;
+    public String date;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -129,7 +130,9 @@ public class WriteFragment extends Fragment {
         String email2 = email1.substring(0,inx);
         return email2;
     }
-
+    /**
+     * FireBase에 Data저장
+     */
     private void saveData(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -140,6 +143,7 @@ public class WriteFragment extends Fragment {
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMHH_mmss");
         Date now = new Date();
+        date =formatter.format(now);
 
         String filename = formatter.format(now) +email+ ".png";
         StorageReference riversRef = mStorageRef.getReferenceFromUrl("gs://selfrecyelrview.appspot.com").child(filename);
