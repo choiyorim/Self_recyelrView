@@ -30,13 +30,11 @@ import java.util.ArrayList;
 public class Fragment5 extends Fragment implements View.OnClickListener{
     private ImageButton btn;
     private ArrayList<testActivity> items=new ArrayList<>();
-    private FirebaseDatabase database;
+    private DatabaseReference database;
     private DatabaseReference myRef;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private DatabaseReference mDatabase;
     private View v;
-    private MyAdpater myAdapter;
     private Fragment fragment;
 
     @Override
@@ -49,22 +47,24 @@ public class Fragment5 extends Fragment implements View.OnClickListener{
         mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
 
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("book");
+        database = FirebaseDatabase.getInstance().getReference();
+        myRef = database.child("book");
         Query contacts = myRef;
         contacts.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //items.clear();
-
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    testActivity test = snapshot.getValue(testActivity.class);
-                    items.add(test);
-                    myAdapter.notifyItemInserted(items.size() - 1);
+                    String img = snapshot.child("image").getValue(String.class);
+                    String bookname = snapshot.child("bookname").getValue(String.class);
+                    String bookcondition = snapshot.child("bookcondition").getValue(String.class);
+                    String price = snapshot.child("price").getValue(String.class);
+                    String title = snapshot.child("title").getValue(String.class);
 
+
+                    items.add(new testActivity(img, bookname, bookcondition, price,title));
+                    recyclerView.setAdapter(new MyAdpater(getActivity().getApplication(), items, R.layout.item_cardview));
                 }
-                myAdapter = new MyAdpater(items,getActivity());
-
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

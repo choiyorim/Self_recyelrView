@@ -141,7 +141,7 @@ public class WriteFragment extends Fragment {
 
         mStorageRef = FirebaseStorage.getInstance();
 
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMHH_mmss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd-hh-mm-ss");
         Date now = new Date();
         date =formatter.format(now);
 
@@ -180,6 +180,6 @@ public class WriteFragment extends Fragment {
         bookvalues.put("price",price1);
         bookvalues.put("bookcondition",bookcon);
         bookvalues.put("bookname",bookname);
-        myRef.child(key1).child(formatter.format(now)).setValue(bookvalues);
+        myRef.child(formatter.format(now)).setValue(bookvalues);
     }
 }
